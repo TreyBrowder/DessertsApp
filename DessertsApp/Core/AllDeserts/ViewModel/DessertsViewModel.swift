@@ -20,7 +20,6 @@ class DessertsViewModel: ObservableObject {
     
     func getDessertData() async {
         do {
-            print("DEBUG - LOG: Calling data service...")
             try await service.fetchDesserts()
         } catch {
             self.errorMessage = error.localizedDescription

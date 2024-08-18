@@ -16,8 +16,6 @@ class DessertDataService {
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
-        guard let dataString = String(data: data, encoding: .utf8) else { return }
-        print("DEBUG - LOG: Data: \(dataString)")
         
     }
 }
