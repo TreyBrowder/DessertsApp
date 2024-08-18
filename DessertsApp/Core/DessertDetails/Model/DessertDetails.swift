@@ -15,10 +15,10 @@ struct MealDetails: Codable, Identifiable {
     let id: String
     let mealName: String
     let instructions: String
-    let ingredient1: String
-    let ingredient2: String
-    let ingredient3: String
-    let ingredient4: String
+    let ingredient1: String?
+    let ingredient2: String?
+    let ingredient3: String?
+    let ingredient4: String?
     let ingredient5: String?
     let ingredient6: String?
     let ingredient7: String?
@@ -35,10 +35,10 @@ struct MealDetails: Codable, Identifiable {
     let ingredient18: String?
     let ingredient19: String?
     let ingredient20: String?
-    let measure1: String
-    let measure2: String
-    let measure3: String
-    let measure4: String
+    let measure1: String?
+    let measure2: String?
+    let measure3: String?
+    let measure4: String?
     let measure5: String?
     let measure6: String?
     let measure7: String?
@@ -102,3 +102,4 @@ struct MealDetails: Codable, Identifiable {
         case measure20 = "strMeasure20"
     }
 }
+
