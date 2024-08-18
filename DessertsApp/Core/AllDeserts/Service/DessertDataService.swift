@@ -11,11 +11,28 @@ class DessertDataService {
     
     private let urlString = "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert"
     
-    func fetchDesserts() async throws {
-        guard let url = URL(string: urlString) else { return }
+    ///Asychronous function to retreive dessert data from API
+    func fetchDesserts() async throws -> Dessert {
+        guard let url = URL(string: urlString) else {
+            throw DessertAPIError.requestFailed(description: "Invalid URL")
+        }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
         
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw DessertAPIError.requestFailed(description: "Request Failed")
+        }
         
+        guard httpResponse.statusCode == 200 else {
+            throw DessertAPIError.invalidStatusCode(statusCode: httpResponse.statusCode)
+        }
+        
+        do {
+            let desserts = try JSONDecoder().decode(Dessert.self, from: data)
+            return desserts
+        } catch {
+            print("DEBUG - Service ERROR: \(error)")
+            throw error as? DessertAPIError ?? .unknownError(error: error)
+        }
     }
 }

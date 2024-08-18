@@ -9,7 +9,7 @@ import Foundation
 
 class DessertsViewModel: ObservableObject {
     
-    @Published var dessertMeals = [Dessert]()
+    @Published var dessertMeals = [Meal]()
     @Published var errorMessage: String?
     
     private let service = DessertDataService()
@@ -18,11 +18,16 @@ class DessertsViewModel: ObservableObject {
         Task { await getDessertData() }
     }
     
+    @MainActor
     func getDessertData() async {
         do {
-            try await service.fetchDesserts()
+            let dessertsFromService = try await service.fetchDesserts()
+            for meal in dessertsFromService.meals {
+                dessertMeals.append(meal)
+            }
         } catch {
-            self.errorMessage = error.localizedDescription
+            guard let error = error as? DessertAPIError else { return }
+            self.errorMessage = error.description
         }
     }
 }

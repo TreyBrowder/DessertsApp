@@ -12,13 +12,32 @@ struct AllDesserts: View {
     @StateObject var dessertsVM = DessertsViewModel()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(dessertsVM.dessertMeals) { meal in
+                    NavigationLink(value: meal) {
+                        HStack {
+                            Image(systemName: "person.circle")
+                            
+                            Text(meal.mealName)
+                                .fontWeight(.heavy)
+                        }
+                    }
+                }
+            }
+            .navigationDestination(for: Meal.self, destination: { meal in
+                DessertDetailsView()
+            })
+            .overlay {
+                if let error = dessertsVM.errorMessage {
+                    VStack(alignment: .center, spacing: 6) {
+                        Image(systemName: "exclamationmark.octagon")
+                        
+                        Text(error)
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
