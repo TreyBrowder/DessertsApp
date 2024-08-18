@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AllDesserts: View {
     
+    @StateObject var dessertsVM = DessertsViewModel()
     
     var body: some View {
         VStack {

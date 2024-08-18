@@ -8,7 +8,7 @@
 import Foundation
 
 struct Dessert: Codable {
-    let meal: [Meal]
+    let meals: [Meal]
 }
 
 struct Meal: Codable, Identifiable {
