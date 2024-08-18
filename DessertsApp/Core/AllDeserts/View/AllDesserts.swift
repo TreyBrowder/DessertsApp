@@ -26,7 +26,7 @@ struct AllDesserts: View {
                 }
             }
             .navigationDestination(for: Meal.self, destination: { meal in
-                DessertDetailsView()
+                DessertDetailsView(meal: meal)
             })
             .overlay {
                 if let error = dessertsVM.errorMessage {

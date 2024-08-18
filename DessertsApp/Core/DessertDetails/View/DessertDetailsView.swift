@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct DessertDetailsView: View {
+    
+    let meal: Meal
+    
     var body: some View {
-        Text("Dessert Details Go Here!")
+        Text(meal.mealName)
     }
 }
 
-#Preview {
-    DessertDetailsView()
-}
+//#Preview {
+//    DessertDetailsView()
+//}
