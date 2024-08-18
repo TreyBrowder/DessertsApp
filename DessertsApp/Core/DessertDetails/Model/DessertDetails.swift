@@ -57,9 +57,9 @@ struct MealDetails: Codable, Identifiable {
     let measure20: String?
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case mealName
-        case instructions
+        case id = "idMeal"
+        case mealName = "strMeal"
+        case instructions = "strInstructions"
         case ingredient1 = "strIngredient1"
         case ingredient2 = "strIngredient2"
         case ingredient3 = "strIngredient3"

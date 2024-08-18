@@ -20,6 +20,7 @@
 		EB5ABC7E2C725CB4009E57A5 /* DessertAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC7D2C725CB4009E57A5 /* DessertAPIError.swift */; };
 		EB5ABC812C72717C009E57A5 /* DessertDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC802C72717C009E57A5 /* DessertDetailsView.swift */; };
 		EB5ABC852C727719009E57A5 /* DessertDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC842C727719009E57A5 /* DessertDetails.swift */; };
+		EB5ABC872C727F42009E57A5 /* DessertDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC862C727F42009E57A5 /* DessertDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		EB5ABC7D2C725CB4009E57A5 /* DessertAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertAPIError.swift; sourceTree = "<group>"; };
 		EB5ABC802C72717C009E57A5 /* DessertDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsView.swift; sourceTree = "<group>"; };
 		EB5ABC842C727719009E57A5 /* DessertDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetails.swift; sourceTree = "<group>"; };
+		EB5ABC862C727F42009E57A5 /* DessertDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		EB5ABC832C7276B2009E57A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EB5ABC862C727F42009E57A5 /* DessertDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			files = (
 				EB5ABC792C723CA3009E57A5 /* Dessert.swift in Sources */,
 				EB5ABC772C723B1A009E57A5 /* DessertsViewModel.swift in Sources */,
+				EB5ABC872C727F42009E57A5 /* DessertDetailsViewModel.swift in Sources */,
 				EB5ABC7C2C724C49009E57A5 /* DessertDataService.swift in Sources */,
 				EB5ABC452C6FF45E009E57A5 /* AllDesserts.swift in Sources */,
 				EB5ABC7E2C725CB4009E57A5 /* DessertAPIError.swift in Sources */,
