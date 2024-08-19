@@ -65,6 +65,29 @@ let testDessertData = """
 }
 """.data(using: .utf8)!
 
+///Invalid Test data for desserts
+let testInvalidDessertData = """
+{
+    "meals": [
+        {
+            "stMeal": "Apam balik",
+            "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
+            "idMel": "53049"
+        }
+        {
+            "stMeal": "Apple & Blackberry Crumble",
+            "strMealThumb": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg",
+            "idMel": "52893"
+        },
+        {
+            "stMeal": "Budino Di Ricotta",
+            "strMealThumb": "https://www.themealdb.com/images/media/meals/1549542877.jpg",
+            "idMel": "52961"
+        }
+    ]
+}
+""".data(using: .utf8)!
+
 ///Test data for desert details
 let testDessertDetails = """
 {

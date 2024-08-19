@@ -17,19 +17,33 @@ class DessertsViewModelTests: XCTestCase {
     }
     
     func testSuccessfulDessertsFetch() async {
-        let service = MockDessertDataService()
-        let viewModel = DessertsViewModel(service: service)
+        let mockService = MockDessertDataService()
+        let dessertsVM = DessertsViewModel(service: mockService)
         
-        await viewModel.getDessertData()
-        print("meal count: \(viewModel.dessertMeals.count)")
-        XCTAssertTrue(viewModel.dessertMeals.count > 0)
+        await dessertsVM.getDessertData()
+        print("meal count: \(dessertsVM.dessertMeals.count)")
+        XCTAssertTrue(dessertsVM.dessertMeals.count > 0)
     }
     
-    func testDestFetchWIthInvalidJSONData() async {
+    func testDessertFetchWIthInvalidJSONData() async {
+        let mockService = MockDessertDataService()
+        mockService.mockData = testInvalidDessertData
         
+        let dessertsVM = DessertsViewModel(service: mockService)
+        await dessertsVM.getDessertData()
+        
+        XCTAssertTrue(dessertsVM.dessertMeals.isEmpty)
+        XCTAssertNotNil(dessertsVM.errorMessage)
     }
     
-    func throwInvalidDataError() async throws {
+    func testThrowInvalidDataError() async throws {
+        let mockService = MockDessertDataService()
+        mockService.mockError = DessertAPIError.invalidData
         
+        let dessertsVM = DessertsViewModel(service: mockService)
+        await dessertsVM.getDessertData()
+        
+        XCTAssertNotNil(dessertsVM.errorMessage)
+        XCTAssertEqual(dessertsVM.errorMessage, DessertAPIError.invalidData.description)
     }
 }
