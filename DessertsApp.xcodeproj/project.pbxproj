@@ -28,6 +28,9 @@
 		EB5ABC932C7386C9009E57A5 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC922C7386C9009E57A5 /* TestData.swift */; };
 		EB5ABC952C7395A2009E57A5 /* DessertsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC942C7395A2009E57A5 /* DessertsViewModelTests.swift */; };
 		EB5ABC962C7397A2009E57A5 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC922C7386C9009E57A5 /* TestData.swift */; };
+		EB5ABC9A2C74058D009E57A5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC992C74058D009E57A5 /* ImageLoader.swift */; };
+		EB5ABC9C2C740596009E57A5 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC9B2C740596009E57A5 /* ImageCache.swift */; };
+		EB5ABC9E2C7405B6009E57A5 /* DessertImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC9D2C7405B6009E57A5 /* DessertImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		EB5ABC902C7383E1009E57A5 /* MockDessertDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDessertDataService.swift; sourceTree = "<group>"; };
 		EB5ABC922C7386C9009E57A5 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		EB5ABC942C7395A2009E57A5 /* DessertsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsViewModelTests.swift; sourceTree = "<group>"; };
+		EB5ABC992C74058D009E57A5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		EB5ABC9B2C740596009E57A5 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		EB5ABC9D2C7405B6009E57A5 /* DessertImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 		EB5ABC6C2C6FF53C009E57A5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EB5ABC972C740569009E57A5 /* Images */,
 				EB5ABC8A2C736BF8009E57A5 /* API */,
 			);
 			path = Shared;
@@ -277,6 +284,16 @@
 				EB5ABC8E2C737295009E57A5 /* DessertDetailsCache.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		EB5ABC972C740569009E57A5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EB5ABC992C74058D009E57A5 /* ImageLoader.swift */,
+				EB5ABC9B2C740596009E57A5 /* ImageCache.swift */,
+				EB5ABC9D2C7405B6009E57A5 /* DessertImageView.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,11 +428,14 @@
 			files = (
 				EB5ABC792C723CA3009E57A5 /* Dessert.swift in Sources */,
 				EB5ABC892C72C23A009E57A5 /* IngredientMeasurement.swift in Sources */,
+				EB5ABC9C2C740596009E57A5 /* ImageCache.swift in Sources */,
+				EB5ABC9A2C74058D009E57A5 /* ImageLoader.swift in Sources */,
 				EB5ABC772C723B1A009E57A5 /* DessertsViewModel.swift in Sources */,
 				EB5ABC872C727F42009E57A5 /* DessertDetailsViewModel.swift in Sources */,
 				EB5ABC8F2C737295009E57A5 /* DessertDetailsCache.swift in Sources */,
 				EB5ABC962C7397A2009E57A5 /* TestData.swift in Sources */,
 				EB5ABC7C2C724C49009E57A5 /* DessertDataService.swift in Sources */,
+				EB5ABC9E2C7405B6009E57A5 /* DessertImageView.swift in Sources */,
 				EB5ABC452C6FF45E009E57A5 /* AllDessertsView.swift in Sources */,
 				EB5ABC7E2C725CB4009E57A5 /* DessertAPIError.swift in Sources */,
 				EB5ABC812C72717C009E57A5 /* DessertDetailsView.swift in Sources */,

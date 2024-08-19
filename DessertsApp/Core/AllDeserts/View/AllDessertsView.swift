@@ -22,11 +22,15 @@ struct AllDessertsView: View {
                 ForEach(dessertsVM.dessertMeals) { meal in
                     NavigationLink(value: meal) {
                         HStack {
-                            Image(systemName: "person.circle")
+                            //Image(systemName: "person.circle")
+                            DessertImageView(url: meal.mealImage)
+                                .frame(width: 48, height: 48)
+                                .clipShape(Circle())
                             
                             Text(meal.mealName)
                                 .fontWeight(.heavy)
                         }
+                        .padding(.vertical, 6)
                     }
                 }
             }
@@ -40,16 +44,17 @@ struct AllDessertsView: View {
                         
                         Text(error)
                     }
+                    .background(Color(.darkGray))
                 }
             }
             .navigationTitle("DESERTS")
         }
         .task {
-            await dessertsVM.getDessertData() 
+            await dessertsVM.getDessertData()
         }
     }
 }
 
 #Preview {
-    AllDessertsView(service: DessertDataService())
+    AllDessertsView(service: MockDessertDataService())
 }

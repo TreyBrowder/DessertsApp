@@ -21,20 +21,23 @@ struct DessertDetailsView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 64, height: 64)
-                        .padding(.trailing, 16)
-                    
                     Text(meal.mealName)
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
-                    
-                    
                 }
                 .padding(.bottom, 16)
                 
+                
+                
+                HStack {
+                    Spacer()
+                    DessertImageView(url: meal.mealImage)
+                        .frame(width: 212, height: 212)
+                        .clipShape(Circle())
+                    Spacer()
+                }
+                .padding(.bottom, 16)
                 
                 VStack(alignment: .leading, spacing: 6){
                     Text("Ingredients")
@@ -78,5 +81,8 @@ struct DessertDetailsView: View {
 }
 
 #Preview {
-    DessertDetailsView(meal: Meal(id: "5432", mealName: "Donuts", mealImage: ""), service: DessertDataService())
+    DessertDetailsView(meal: Meal(id: "5432",
+                                  mealName: "Donuts",
+                                  mealImage: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg"),
+                       service: MockDessertDataService())
 }
