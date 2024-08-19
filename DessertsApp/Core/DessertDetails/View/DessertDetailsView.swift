@@ -60,11 +60,9 @@ struct DessertDetailsView: View {
                     .foregroundStyle(Color(.systemGray2))
                 
                 if let instructions = detailsVM.mealInstructions {
-                    HStack(){
-                        Text(instructions)
-                    }
-                    .font(.headline)
-                    .fontWeight(.semibold)
+                    Text(instructions)
+                        .font(.headline)
+                        .fontWeight(.semibold)
                 }
                
                 
@@ -72,6 +70,9 @@ struct DessertDetailsView: View {
             }
             .padding(.horizontal)
             
+        }
+        .task {
+            await detailsVM.getDessertDetails()
         }
     }
 }

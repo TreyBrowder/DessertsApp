@@ -10,7 +10,6 @@ import Foundation
 class DessertDataService {
     
     private let urlString = "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert"
-    private let detailsUrlString = "https://themealdb.com/api/json/v1/1/lookup.php?i=52768"
     
     ///Asychronous function to retreive dessert data from API
     func fetchDesserts() async throws -> Dessert {
@@ -39,6 +38,9 @@ class DessertDataService {
     
     ///Asychronous function to retreive dessert details data from API
     func fetchDessertDetails(id: String) async throws -> DessertDetails {
+        
+        let detailsUrlString = "https://themealdb.com/api/json/v1/1/lookup.php?i=\(id)"
+        
         guard let url = URL(string: detailsUrlString) else {
             throw DessertAPIError.requestFailed(description: "Invalid URL")
         }

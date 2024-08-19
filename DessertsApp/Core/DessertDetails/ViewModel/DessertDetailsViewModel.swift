@@ -19,8 +19,6 @@ class DessertDetailsViewModel: ObservableObject {
     
     init(dessertId: String) {
         self.dessertId = dessertId
-        
-        Task { await getDessertDetails() }
     }
     
     func getDessertDetails() async {
@@ -57,20 +55,5 @@ class DessertDetailsViewModel: ObservableObject {
         
         mealInstructions = dessertDetails.instructions
         
-//        print("DEBUG - LOG: INGREDIENTS ARRAY:")
-//        print(mealIngredients)
-//        print(" *** ")
-//        print("DEBUG - LOG: MEASUREMENTS ARRAY:")
-//        print(mealMeasurements)
-//        print(" *** ")
-//        print("DEBUG - LOG: INSTRUCTIONS:")
-//        print(mealInstructions ?? "N/A")
-//        print("DEBUG - LOG: INGREDIENTS MEASUREMENTS ARRAY:")
-//        print(ingredientMeasurements)
     }
-    
-    private func formatInstructions(instructions: String) -> String {
-        return ""
-    }
-
 }
