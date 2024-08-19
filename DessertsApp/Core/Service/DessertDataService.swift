@@ -19,7 +19,6 @@ class DessertDataService: DataDownloaderProtocol {
         return components
     }
     
-    
     private var allDessertsUrlString: String? {
         var components = baseUrlComponents
         components.path += "filter.php"
@@ -55,11 +54,17 @@ class DessertDataService: DataDownloaderProtocol {
     
     ///Asychronous function to retreive dessert details data from API
     func fetchDessertDetails(id: String) async throws -> DessertDetails {
+        if let cached = DessertDetailsCache.shared.get(key: id) {
+            print("DEBUG - LOG: Returning data from cache")
+            return cached
+        }
+        
         guard let endpoint = dessertDetailsUrlString(id: id) else {
             throw DessertAPIError.requestFailed(description: "Invalid URL")
         }
         
-        return try await fetchData(as: DessertDetails.self, endpoint: endpoint)
+        let details = try await fetchData(as: DessertDetails.self, endpoint: endpoint)
+        DessertDetailsCache.shared.set(dessertDetails: details, key: id)
+        return details
     }
-    
 }
