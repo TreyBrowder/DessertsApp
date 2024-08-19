@@ -12,7 +12,7 @@ struct DessertDetailsView: View {
     @ObservedObject var detailsVM: DessertDetailsViewModel
     let meal: Meal
     
-    init(meal: Meal, service: DessertDataService) {
+    init(meal: Meal, service: DessertServiceProtocol) {
         self.meal = meal
         self.detailsVM = DessertDetailsViewModel(dessertId: meal.id, service: service)
     }

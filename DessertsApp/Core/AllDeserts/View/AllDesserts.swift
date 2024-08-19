@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AllDesserts: View {
     @StateObject var dessertsVM: DessertsViewModel
-    private let service: DessertDataService
+    private let service: DessertServiceProtocol
     
-    init(service: DessertDataService) {
+    init(service: DessertServiceProtocol) {
         self.service = service
         self._dessertsVM = StateObject(wrappedValue: DessertsViewModel(service: service))
     }

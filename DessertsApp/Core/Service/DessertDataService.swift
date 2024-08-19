@@ -7,7 +7,12 @@
 
 import Foundation
 
-class DessertDataService: DataDownloaderProtocol {
+protocol DessertServiceProtocol {
+    func fetchDesserts() async throws -> Dessert
+    func fetchDessertDetails(id: String) async throws -> DessertDetails
+}
+
+class DessertDataService: DessertServiceProtocol, DataDownloaderProtocol {
     
 //MARK: - URL Retated variables/functions
     private var baseUrlComponents: URLComponents {
