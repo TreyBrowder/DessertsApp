@@ -16,8 +16,6 @@ class DessertsViewModel: ObservableObject {
     
     init(service: DessertServiceProtocol){
         self.service = service
-        
-        Task { await getDessertData() }
     }
     
     @MainActor

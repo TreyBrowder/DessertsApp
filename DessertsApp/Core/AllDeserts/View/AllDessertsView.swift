@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllDesserts: View {
+struct AllDessertsView: View {
     @StateObject var dessertsVM: DessertsViewModel
     private let service: DessertServiceProtocol
     
@@ -44,9 +44,12 @@ struct AllDesserts: View {
             }
             .navigationTitle("DESERTS")
         }
+        .task {
+            await dessertsVM.getDessertData() 
+        }
     }
 }
 
 #Preview {
-    AllDesserts(service: DessertDataService())
+    AllDessertsView(service: DessertDataService())
 }
