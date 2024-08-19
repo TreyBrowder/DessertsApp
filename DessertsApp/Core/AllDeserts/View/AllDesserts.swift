@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct AllDesserts: View {
+    @StateObject var dessertsVM: DessertsViewModel
+    private let service: DessertDataService
     
-    @StateObject var dessertsVM = DessertsViewModel()
+    init(service: DessertDataService) {
+        self.service = service
+        self._dessertsVM = StateObject(wrappedValue: DessertsViewModel(service: service))
+    }
     
     var body: some View {
         NavigationStack {
@@ -26,7 +31,7 @@ struct AllDesserts: View {
                 }
             }
             .navigationDestination(for: Meal.self, destination: { meal in
-                DessertDetailsView(meal: meal)
+                DessertDetailsView(meal: meal, service: service)
             })
             .overlay {
                 if let error = dessertsVM.errorMessage {
@@ -37,10 +42,11 @@ struct AllDesserts: View {
                     }
                 }
             }
+            .navigationTitle("DESERTS")
         }
     }
 }
 
 #Preview {
-    AllDesserts()
+    AllDesserts(service: DessertDataService())
 }

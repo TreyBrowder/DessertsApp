@@ -14,11 +14,12 @@ class DessertDetailsViewModel: ObservableObject {
     var mealIngredients = [String]()
     var mealMeasurements = [String]()
     
-    private let service = DessertDataService()
+    private let service: DessertDataService
     private let dessertId: String
     
-    init(dessertId: String) {
+    init(dessertId: String, service: DessertDataService) {
         self.dessertId = dessertId
+        self.service = service
     }
     
     func getDessertDetails() async {

@@ -180,7 +180,6 @@
 				EB5ABC752C72366E009E57A5 /* Model */,
 				EB5ABC742C723669009E57A5 /* View */,
 				EB5ABC732C723662009E57A5 /* ViewModel */,
-				EB5ABC7A2C7248E5009E57A5 /* Service */,
 			);
 			path = AllDeserts;
 			sourceTree = "<group>";
@@ -227,13 +226,6 @@
 				EB5ABC7D2C725CB4009E57A5 /* DessertAPIError.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		EB5ABC7A2C7248E5009E57A5 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		EB5ABC7F2C727159009E57A5 /* View */ = {

@@ -12,9 +12,9 @@ struct DessertDetailsView: View {
     @ObservedObject var detailsVM: DessertDetailsViewModel
     let meal: Meal
     
-    init(meal: Meal) {
+    init(meal: Meal, service: DessertDataService) {
         self.meal = meal
-        self.detailsVM = DessertDetailsViewModel(dessertId: meal.id)
+        self.detailsVM = DessertDetailsViewModel(dessertId: meal.id, service: service)
     }
     
     var body: some View {
@@ -78,5 +78,5 @@ struct DessertDetailsView: View {
 }
 
 #Preview {
-    DessertDetailsView(meal: Meal(id: "5432", mealName: "Donuts", mealImage: ""))
+    DessertDetailsView(meal: Meal(id: "5432", mealName: "Donuts", mealImage: ""), service: DessertDataService())
 }

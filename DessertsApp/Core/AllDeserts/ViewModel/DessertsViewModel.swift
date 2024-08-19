@@ -12,9 +12,11 @@ class DessertsViewModel: ObservableObject {
     @Published var dessertMeals = [Meal]()
     @Published var errorMessage: String?
     
-    private let service = DessertDataService()
+    private let service: DessertDataService
     
-    init(){
+    init(service: DessertDataService){
+        self.service = service
+        
         Task { await getDessertData() }
     }
     
