@@ -21,6 +21,7 @@
 		EB5ABC812C72717C009E57A5 /* DessertDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC802C72717C009E57A5 /* DessertDetailsView.swift */; };
 		EB5ABC852C727719009E57A5 /* DessertDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC842C727719009E57A5 /* DessertDetails.swift */; };
 		EB5ABC872C727F42009E57A5 /* DessertDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC862C727F42009E57A5 /* DessertDetailsViewModel.swift */; };
+		EB5ABC892C72C23A009E57A5 /* IngredientMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC882C72C23A009E57A5 /* IngredientMeasurement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EB5ABC802C72717C009E57A5 /* DessertDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsView.swift; sourceTree = "<group>"; };
 		EB5ABC842C727719009E57A5 /* DessertDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetails.swift; sourceTree = "<group>"; };
 		EB5ABC862C727F42009E57A5 /* DessertDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsViewModel.swift; sourceTree = "<group>"; };
+		EB5ABC882C72C23A009E57A5 /* IngredientMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMeasurement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5ABC842C727719009E57A5 /* DessertDetails.swift */,
+				EB5ABC882C72C23A009E57A5 /* IngredientMeasurement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5ABC792C723CA3009E57A5 /* Dessert.swift in Sources */,
+				EB5ABC892C72C23A009E57A5 /* IngredientMeasurement.swift in Sources */,
 				EB5ABC772C723B1A009E57A5 /* DessertsViewModel.swift in Sources */,
 				EB5ABC872C727F42009E57A5 /* DessertDetailsViewModel.swift in Sources */,
 				EB5ABC7C2C724C49009E57A5 /* DessertDataService.swift in Sources */,
@@ -562,6 +566,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +596,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

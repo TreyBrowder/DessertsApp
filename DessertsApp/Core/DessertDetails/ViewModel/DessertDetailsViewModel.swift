@@ -9,9 +9,10 @@ import Foundation
 
 class DessertDetailsViewModel: ObservableObject {
     
-    @Published var mealDetails = [String]()
-    @Published var mealIngredients = [String]()
-    @Published var mealmeasurements = [String]()
+    @Published var ingredientMeasurements = [IngredientMeasurement]()
+    @Published var mealInstructions: String?
+    var mealIngredients = [String]()
+    var mealMeasurements = [String]()
     
     private let service = DessertDataService()
     private let dessertId: String
@@ -26,7 +27,7 @@ class DessertDetailsViewModel: ObservableObject {
         do {
             let result = try await service.fetchDessertDetails(id: dessertId)
             let dessetDetails = result.meals[0]
-            await setData(dessertDetails: dessetDetails)
+            await transformData(dessertDetails: dessetDetails)
         } catch {
             //handle errors here
             print("DEBUG - ERROR: \(error.localizedDescription)")
@@ -34,7 +35,7 @@ class DessertDetailsViewModel: ObservableObject {
     }
     
     @MainActor
-    private func setData(dessertDetails: MealDetails) {
+    private func transformData(dessertDetails: MealDetails) {
         let ingredients: [String?] = [
             dessertDetails.ingredient1, dessertDetails.ingredient2, dessertDetails.ingredient3, dessertDetails.ingredient4, dessertDetails.ingredient5, dessertDetails.ingredient6, dessertDetails.ingredient7, dessertDetails.ingredient8, dessertDetails.ingredient9, dessertDetails.ingredient10, dessertDetails.ingredient11, dessertDetails.ingredient12, dessertDetails.ingredient13, dessertDetails.ingredient14, dessertDetails.ingredient15, dessertDetails.ingredient16, dessertDetails.ingredient17, dessertDetails.ingredient18, dessertDetails.ingredient19, dessertDetails.ingredient20
         ]
@@ -46,24 +47,30 @@ class DessertDetailsViewModel: ObservableObject {
         mealIngredients = ingredients.compactMap {
             $0?.replacingOccurrences(of: " ", with: "").isEmpty == false ? $0 : nil
         }
-        mealmeasurements = measures.compactMap {
+        mealMeasurements = measures.compactMap {
             $0?.replacingOccurrences(of: " ", with: "").isEmpty == false ? $0 : nil
         }
         
-        mealDetails = [
-            dessertDetails.mealName,
-            dessertDetails.instructions
-        ]
+        ingredientMeasurements = zip(mealIngredients, mealMeasurements).map {
+            IngredientMeasurement(ingredient: $0, measurement: $1)
+        }
         
-        print("DEBUG - LOG: INGREDIENTS ARRAY:")
-        print(mealIngredients)
-        print(" *** ")
-        print("DEBUG - LOG: MEASUREMENTS ARRAY:")
-        print(mealmeasurements)
-        print(" *** ")
-        print("DEBUG - LOG: DETAILS ARRAY:")
-        print(mealDetails)
-        print(" *** ")
+        mealInstructions = dessertDetails.instructions
+        
+//        print("DEBUG - LOG: INGREDIENTS ARRAY:")
+//        print(mealIngredients)
+//        print(" *** ")
+//        print("DEBUG - LOG: MEASUREMENTS ARRAY:")
+//        print(mealMeasurements)
+//        print(" *** ")
+//        print("DEBUG - LOG: INSTRUCTIONS:")
+//        print(mealInstructions ?? "N/A")
+//        print("DEBUG - LOG: INGREDIENTS MEASUREMENTS ARRAY:")
+//        print(ingredientMeasurements)
+    }
+    
+    private func formatInstructions(instructions: String) -> String {
+        return ""
     }
 
 }
