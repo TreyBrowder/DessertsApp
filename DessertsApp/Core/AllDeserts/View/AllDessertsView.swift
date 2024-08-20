@@ -34,6 +34,9 @@ struct AllDessertsView: View {
                     }
                 }
             }
+            .listStyle(.plain)
+            .listRowSeparator(.hidden)
+            .navigationTitle("DESERTS")
             .navigationDestination(for: Meal.self, destination: { meal in
                 DessertDetailsView(meal: meal, service: service)
             })
@@ -47,7 +50,6 @@ struct AllDessertsView: View {
                     .background(Color(.darkGray))
                 }
             }
-            .navigationTitle("DESERTS")
         }
         .task {
             await dessertsVM.getDessertData()
