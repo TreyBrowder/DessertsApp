@@ -16,11 +16,11 @@ struct InstructionsView: View {
             .fontWeight(.semibold)
             .foregroundStyle(Color(.systemGray2))
         
-        if let instructions = detailsVM.mealInstructions {
-            Text(instructions)
+        
+        Text(detailsVM.mealInstructions)
                 .font(.headline)
                 .fontWeight(.semibold)
-        }
+        
     }
 }
 

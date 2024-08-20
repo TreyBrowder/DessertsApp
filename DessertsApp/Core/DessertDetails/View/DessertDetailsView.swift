@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DessertDetailsView: View {
-    @ObservedObject var detailsVM: DessertDetailsViewModel
+    @StateObject var detailsVM: DessertDetailsViewModel
     let meal: Meal
     
     init(meal: Meal, service: DessertServiceProtocol) {
         self.meal = meal
-        self.detailsVM = DessertDetailsViewModel(dessertId: meal.id, service: service)
+        self._detailsVM = StateObject(wrappedValue: DessertDetailsViewModel(dessertId: meal.id, service: service)) 
     }
     
     var body: some View {
