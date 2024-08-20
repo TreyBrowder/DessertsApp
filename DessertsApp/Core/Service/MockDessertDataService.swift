@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockDessertDataService: DessertServiceProtocol {
+final class MockDessertDataService: DessertServiceProtocol {
     
     var mockData: Data?
     var mockError: DessertAPIError?

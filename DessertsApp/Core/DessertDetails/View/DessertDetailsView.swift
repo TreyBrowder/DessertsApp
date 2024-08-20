@@ -39,11 +39,9 @@ struct DessertDetailsView: View {
                 IngredientsView(detailsVM: detailsVM)
                 
                 InstructionsView(detailsVM: detailsVM)
-
                 Spacer()
             }
             .padding(.horizontal)
-            
         }
         .task {
             await detailsVM.getDessertDetails()

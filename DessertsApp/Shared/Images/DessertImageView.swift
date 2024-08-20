@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DessertImageView: View {
-    
     @ObservedObject var imageLoader: ImageLoader
     
     init(url: String) {

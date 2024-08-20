@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DessertDetailsCache {
+final class DessertDetailsCache {
     
     static let shared = DessertDetailsCache()
     

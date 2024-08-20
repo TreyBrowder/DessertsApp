@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DessertDetailsViewModel: ObservableObject {
+final class DessertDetailsViewModel: ObservableObject {
     
     @Published var ingredientMeasurements = [IngredientMeasurement]()
     @Published var mealInstructions = ""
@@ -33,6 +33,8 @@ class DessertDetailsViewModel: ObservableObject {
         }
     }
     
+//MARK: - Helper functions
+    
     @MainActor
     private func transformData(dessertDetails: MealDetails) {
         let ingredients: [String?] = [
@@ -46,6 +48,7 @@ class DessertDetailsViewModel: ObservableObject {
         mealIngredients = ingredients.compactMap {
             $0?.replacingOccurrences(of: " ", with: "").isEmpty == false ? $0 : nil
         }
+        
         mealMeasurements = measures.compactMap {
             $0?.replacingOccurrences(of: " ", with: "").isEmpty == false ? $0 : nil
         }

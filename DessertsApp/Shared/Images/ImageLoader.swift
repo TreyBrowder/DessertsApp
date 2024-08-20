@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ImageLoader: ObservableObject {
+final class ImageLoader: ObservableObject {
     @Published var image: Image?
     
     private let urlString: String

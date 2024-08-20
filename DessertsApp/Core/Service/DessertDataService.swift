@@ -12,9 +12,9 @@ protocol DessertServiceProtocol {
     func fetchDessertDetails(id: String) async throws -> DessertDetails
 }
 
-class DessertDataService: DessertServiceProtocol, DataDownloaderProtocol {
+final class DessertDataService: DessertServiceProtocol, DataDownloaderProtocol {
     
-//MARK: - URL Retated variables/functions
+//MARK: - URL Related variables/functions
     private var baseUrlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "https"

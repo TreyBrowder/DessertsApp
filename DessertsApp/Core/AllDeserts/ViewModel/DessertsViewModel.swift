@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DessertsViewModel: ObservableObject {
+final class DessertsViewModel: ObservableObject {
     
     @Published var dessertMeals = [Meal]()
     @Published var errorMessage: String?

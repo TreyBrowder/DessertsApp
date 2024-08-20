@@ -8,7 +8,7 @@
 import XCTest
 @testable import DessertsApp
 
-class DessertsViewModelTests: XCTestCase {
+final class DessertsViewModelTests: XCTestCase {
     
     var dessertsVM: DessertsViewModel!
     var mockService: MockDessertDataService!
