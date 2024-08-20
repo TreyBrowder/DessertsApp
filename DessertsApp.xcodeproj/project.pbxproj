@@ -244,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				EB5ABC782C723CA3009E57A5 /* Dessert.swift */,
-				EB5ABC7D2C725CB4009E57A5 /* DessertAPIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +278,7 @@
 		EB5ABC8A2C736BF8009E57A5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				EB5ABC7D2C725CB4009E57A5 /* DessertAPIError.swift */,
 				EB5ABC8B2C736C14009E57A5 /* DataDownloader.swift */,
 			);
 			path = API;

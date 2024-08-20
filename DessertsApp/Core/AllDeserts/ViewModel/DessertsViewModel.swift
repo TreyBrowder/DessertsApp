@@ -11,8 +11,16 @@ class DessertsViewModel: ObservableObject {
     
     @Published var dessertMeals = [Meal]()
     @Published var errorMessage: String?
+    @Published var searchedText: String = ""
     
     private let service: DessertServiceProtocol
+    
+    var filteredMeals: [Meal] {
+        guard !searchedText.isEmpty else { return dessertMeals }
+        return dessertMeals.filter { meal in
+            meal.mealName.lowercased().contains(searchedText.lowercased())
+        }
+    }
     
     init(service: DessertServiceProtocol){
         self.service = service

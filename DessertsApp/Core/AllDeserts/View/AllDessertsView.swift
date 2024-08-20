@@ -19,7 +19,7 @@ struct AllDessertsView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(dessertsVM.dessertMeals) { meal in
+                ForEach(dessertsVM.filteredMeals) { meal in
                     NavigationLink(value: meal) {
                         HStack {
                             //Image(systemName: "person.circle")
@@ -30,7 +30,7 @@ struct AllDessertsView: View {
                             Text(meal.mealName)
                                 .fontWeight(.heavy)
                         }
-                        .padding(.vertical, 6)
+                        .padding(.vertical, 4)
                     }
                 }
             }
@@ -40,6 +40,7 @@ struct AllDessertsView: View {
             .navigationDestination(for: Meal.self, destination: { meal in
                 DessertDetailsView(meal: meal, service: service)
             })
+            .searchable(text: $dessertsVM.searchedText)
             .overlay {
                 if let error = dessertsVM.errorMessage {
                     VStack(alignment: .center, spacing: 6) {
