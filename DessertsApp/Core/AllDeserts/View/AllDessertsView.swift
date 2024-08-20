@@ -36,7 +36,7 @@ struct AllDessertsView: View {
             }
             .listStyle(.plain)
             .listRowSeparator(.hidden)
-            .navigationTitle("DESERTS")
+            .navigationTitle("DESSERTS")
             .navigationDestination(for: Meal.self, destination: { meal in
                 DessertDetailsView(meal: meal, service: service)
             })

@@ -13,7 +13,6 @@
 		EB5ABC4A2C6FF460009E57A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5ABC492C6FF460009E57A5 /* Preview Assets.xcassets */; };
 		EB5ABC542C6FF461009E57A5 /* DessertsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC532C6FF461009E57A5 /* DessertsAppTests.swift */; };
 		EB5ABC5E2C6FF461009E57A5 /* DessertsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC5D2C6FF461009E57A5 /* DessertsAppUITests.swift */; };
-		EB5ABC602C6FF461009E57A5 /* DessertsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC5F2C6FF461009E57A5 /* DessertsAppUITestsLaunchTests.swift */; };
 		EB5ABC772C723B1A009E57A5 /* DessertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC762C723B1A009E57A5 /* DessertsViewModel.swift */; };
 		EB5ABC792C723CA3009E57A5 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC782C723CA3009E57A5 /* Dessert.swift */; };
 		EB5ABC7C2C724C49009E57A5 /* DessertDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5ABC7B2C724C48009E57A5 /* DessertDataService.swift */; };
@@ -62,7 +61,6 @@
 		EB5ABC532C6FF461009E57A5 /* DessertsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsAppTests.swift; sourceTree = "<group>"; };
 		EB5ABC592C6FF461009E57A5 /* DessertsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DessertsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5ABC5D2C6FF461009E57A5 /* DessertsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsAppUITests.swift; sourceTree = "<group>"; };
-		EB5ABC5F2C6FF461009E57A5 /* DessertsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB5ABC762C723B1A009E57A5 /* DessertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsViewModel.swift; sourceTree = "<group>"; };
 		EB5ABC782C723CA3009E57A5 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		EB5ABC7B2C724C48009E57A5 /* DessertDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDataService.swift; sourceTree = "<group>"; };
@@ -151,8 +149,8 @@
 		EB5ABC522C6FF461009E57A5 /* DessertsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB5ABC532C6FF461009E57A5 /* DessertsAppTests.swift */,
 				EB5ABC922C7386C9009E57A5 /* TestData.swift */,
+				EB5ABC532C6FF461009E57A5 /* DessertsAppTests.swift */,
 				EB5ABC942C7395A2009E57A5 /* DessertsViewModelTests.swift */,
 			);
 			path = DessertsAppTests;
@@ -162,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				EB5ABC5D2C6FF461009E57A5 /* DessertsAppUITests.swift */,
-				EB5ABC5F2C6FF461009E57A5 /* DessertsAppUITestsLaunchTests.swift */,
 			);
 			path = DessertsAppUITests;
 			sourceTree = "<group>";
@@ -469,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5ABC5E2C6FF461009E57A5 /* DessertsAppUITests.swift in Sources */,
-				EB5ABC602C6FF461009E57A5 /* DessertsAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

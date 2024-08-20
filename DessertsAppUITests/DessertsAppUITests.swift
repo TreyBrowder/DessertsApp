@@ -6,36 +6,55 @@
 //
 
 import XCTest
+@testable import DessertsApp
 
 final class DessertsAppUITests: XCTestCase {
+    
+    private var app: XCUIApplication!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    override func setUp() {
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    override func tearDown() {
+        super.tearDown()
+        app = nil
+    }
+    
+    func testAllDessertListTitleExists() {
+        let listTitle = app.staticTexts["DESSERTS"]
+        
+        XCTAssertTrue(listTitle.exists)
+    }
+    
+    func testNavigationFlow() {
+        app.collectionViews/*@START_MENU_TOKEN@*/.staticTexts["Apam balik"]/*[[".cells",".buttons[\"Apam balik\"].staticTexts[\"Apam balik\"]",".staticTexts[\"Apam balik\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let mealTitle = app.staticTexts["Instructions"]
+        
+        XCTAssertTrue(mealTitle.exists)
+        
+        app.navigationBars.buttons["DESSERTS"].tap()
+        let listItem = app.collectionViews.staticTexts["Battenberg Cake"]
+        
+        XCTAssertTrue(listItem.exists)
+    }
+    
+    func testSearchBarExists() {
+        let searchBar = app.navigationBars["DESSERTS"].searchFields["Search"]
+        
+        XCTAssertTrue(searchBar.exists)
+    }
+    
+    func testSearchBarFlow() {
+        let searchBar = app.navigationBars["DESSERTS"].searchFields["Search"]
+        
+        searchBar.tap()
+        searchBar.typeText("Bakewell")
+        app.collectionViews/*@START_MENU_TOKEN@*/.staticTexts["Bakewell tart"]/*[[".cells",".buttons[\"Bakewell tart\"].staticTexts[\"Bakewell tart\"]",".staticTexts[\"Bakewell tart\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let bakewellImage = app.images.element
+        
+        XCTAssertTrue(bakewellImage.exists)
     }
 }

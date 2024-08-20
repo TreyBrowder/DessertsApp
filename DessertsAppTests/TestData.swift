@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Test data for desert list
+///Test data for dessert list
 let testDessertData = """
 {
     "meals": [
@@ -71,7 +71,7 @@ let testInvalidDessertData = """
     "meals": [
         {
             "stMeal": "Apam balik",
-            "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
+            "stMealThumb": "httpsww.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
             "idMel": "53049"
         }
         {
