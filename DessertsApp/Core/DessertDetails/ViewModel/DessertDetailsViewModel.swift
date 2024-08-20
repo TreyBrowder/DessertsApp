@@ -24,7 +24,6 @@ class DessertDetailsViewModel: ObservableObject {
     
     func getDessertDetails() async {
         do {
-            print("DEBUG - LOG: Calling dessert details service...")
             let result = try await service.fetchDessertDetails(id: dessertId)
             let dessetDetails = result.meals[0]
             await transformData(dessertDetails: dessetDetails)
@@ -36,7 +35,6 @@ class DessertDetailsViewModel: ObservableObject {
     
     @MainActor
     private func transformData(dessertDetails: MealDetails) {
-        print("DEBUG - LOG: Dessert details Transform data method init...")
         let ingredients: [String?] = [
             dessertDetails.ingredient1, dessertDetails.ingredient2, dessertDetails.ingredient3, dessertDetails.ingredient4, dessertDetails.ingredient5, dessertDetails.ingredient6, dessertDetails.ingredient7, dessertDetails.ingredient8, dessertDetails.ingredient9, dessertDetails.ingredient10, dessertDetails.ingredient11, dessertDetails.ingredient12, dessertDetails.ingredient13, dessertDetails.ingredient14, dessertDetails.ingredient15, dessertDetails.ingredient16, dessertDetails.ingredient17, dessertDetails.ingredient18, dessertDetails.ingredient19, dessertDetails.ingredient20
         ]
@@ -56,9 +54,6 @@ class DessertDetailsViewModel: ObservableObject {
             IngredientMeasurement(ingredient: $0, measurement: $1)
         }
         
-        print("DEBUG - LOG: SETTING MEAL INSTRUCTIONS")
         mealInstructions = dessertDetails.instructions
-        print("DEBUG - LOG: SETTING MEAL INSTRUCTIONS")
-        
     }
 }
