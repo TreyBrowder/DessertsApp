@@ -22,7 +22,6 @@ class ImageLoader: ObservableObject {
     private func loadImage() async throws {
         
         if let cached = ImageCache.shared.get(key: urlString) {
-            print("DEBUG - LOG: Got image from cache")
             self.image = Image(uiImage: cached)
             return
         }

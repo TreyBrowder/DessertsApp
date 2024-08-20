@@ -60,7 +60,6 @@ class DessertDataService: DessertServiceProtocol, DataDownloaderProtocol {
     ///Asychronous function to retreive dessert details data from API
     func fetchDessertDetails(id: String) async throws -> DessertDetails {
         if let cached = DessertDetailsCache.shared.get(key: id) {
-            print("DEBUG - LOG: Returning data from cache")
             return cached
         }
         
