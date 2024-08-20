@@ -9,6 +9,7 @@ FEATURE branch - implements a lazy vgrid - I didn't really like this immplementa
                  work with grid views.
 
 Features:
+  - MVVM architeture with a decoupled generic service component utilizing protocol oriented programming
   - Swift Concurrency (Async/Await)
   - custom Async Image loading with cache support
   - API Response caching
