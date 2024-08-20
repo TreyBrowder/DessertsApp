@@ -17,7 +17,15 @@ Features:
   - search bar with filtering functionality based on entered text
   - Newer version of the Navigation Stack
 
+Screen shots of UI:
 
+<img width="425" alt="DessertOne" src="https://github.com/user-attachments/assets/0d1dd8da-3a34-41c9-871b-fd3b51918a3e">
+
+<img width="425" alt="DessertTwo" src="https://github.com/user-attachments/assets/a3045300-fbb7-46d1-a7e9-63bd90f4504e">
+
+<img width="425" alt="DessertThree" src="https://github.com/user-attachments/assets/a943021f-e650-43eb-a1f0-be074db4829f">
+
+<img width="425" alt="DessertFour" src="https://github.com/user-attachments/assets/b799fb11-d28f-450e-a8a5-61563731ef31">
 
 
 
