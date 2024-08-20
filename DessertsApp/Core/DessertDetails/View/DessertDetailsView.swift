@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DessertDetailsView: View {
-    
     @ObservedObject var detailsVM: DessertDetailsViewModel
     let meal: Meal
     
@@ -27,9 +26,7 @@ struct DessertDetailsView: View {
                     Spacer()
                 }
                 .padding(.bottom, 16)
-                
-                
-                
+
                 HStack {
                     Spacer()
                     DessertImageView(url: meal.mealImage)
@@ -39,36 +36,10 @@ struct DessertDetailsView: View {
                 }
                 .padding(.bottom, 16)
                 
-                VStack(alignment: .leading, spacing: 6){
-                    Text("Ingredients")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color(.systemGray2))
-                    
-                    ForEach(detailsVM.ingredientMeasurements) { item in
-                        HStack(){
-                            Text(item.measurement)
-                            Text("-")
-                            Text(item.ingredient)
-                        }
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                    }
-                }
-                .padding(.bottom, 16)
+                IngredientsView(detailsVM: detailsVM)
                 
-                Text("Instructions")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color(.systemGray2))
-                
-                if let instructions = detailsVM.mealInstructions {
-                    Text(instructions)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                }
-               
-                
+                InstructionsView(detailsVM: detailsVM)
+
                 Spacer()
             }
             .padding(.horizontal)
