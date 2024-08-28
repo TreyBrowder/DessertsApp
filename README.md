@@ -9,6 +9,7 @@ FEATURE branch - implements a lazy vgrid - I didn't really like this immplementa
                  work with grid views.
 
 Features:
+  - MVVM architeture with a decoupled generic service component utilizing protocol oriented programming
   - Swift Concurrency (Async/Await)
   - custom Async Image loading with cache support
   - API Response caching
@@ -19,7 +20,7 @@ Features:
 
 Screen shots of UI:
 
-<img width="425" alt="DessertOne" src="https://github.com/user-attachments/assets/0d1dd8da-3a34-41c9-871b-fd3b51918a3e">
+<img width="425" alt="DessertOne" src="https://github.com/user-attachments/assets/efe39a29-c952-4e0e-9ae0-da04c9b809ca">
 
 <img width="425" alt="DessertTwo" src="https://github.com/user-attachments/assets/a3045300-fbb7-46d1-a7e9-63bd90f4504e">
 
