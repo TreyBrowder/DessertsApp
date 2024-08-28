@@ -52,7 +52,7 @@ final class DessertsViewModelTests: XCTestCase {
         XCTAssertEqual(dessertsVM.errorMessage, DessertAPIError.invalidData.description)
     }
     
-    func testMealsAreFilterdAtoZ() async throws {
+    func testMealsAreSortedAtoZ() async throws {
         
         await dessertsVM.getDessertData()
         let sortedArray = dessertsVM.dessertMeals.sorted { $0.mealName < $1.mealName }
