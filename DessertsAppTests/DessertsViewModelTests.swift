@@ -51,4 +51,12 @@ final class DessertsViewModelTests: XCTestCase {
         XCTAssertNotNil(dessertsVM.errorMessage)
         XCTAssertEqual(dessertsVM.errorMessage, DessertAPIError.invalidData.description)
     }
+    
+    func testMealsAreFilterdAtoZ() async throws {
+        
+        await dessertsVM.getDessertData()
+        let sortedArray = dessertsVM.dessertMeals.sorted { $0.mealName < $1.mealName }
+        
+        XCTAssertEqual(dessertsVM.dessertMeals, sortedArray, "The meals are not in alphabetical order")
+    }
 }
